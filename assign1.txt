@@ -1,0 +1,51 @@
+// greetings.js
+function greet(name) {
+  return `Hello, ${name}! Welcome to the Node.js module system.`;
+}
+
+module.exports = greet;
+
+
+// mathOperations.js
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    return 'Cannot divide by zero';
+  }
+  return a / b;
+}
+module.exports = {
+  add,
+  subtract,
+  multiply,
+  divide,
+};
+
+
+// main.js
+const greet = require('./greetings');
+const math = require('./mathOperations');
+
+// Greet user
+const userName = 'Mayur';
+console.log(greet(userName));
+
+// Math operations
+const a = 10;
+const b = 5;
+
+console.log(`Addition: ${math.add(a, b)}`);
+console.log(`Subtraction: ${math.subtract(a, b)}`);
+console.log(`Multiplication: ${math.multiply(a, b)}`);
+console.log(`Division: ${math.divide(a, b)}`);
